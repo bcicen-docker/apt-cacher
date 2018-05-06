@@ -7,5 +7,7 @@ COPY run.sh /run.sh
 
 EXPOSE 80
 
-ENTRYPOINT []
-CMD /bin/bash /run.sh
+RUN mkdir -p /run/nginx
+
+ENTRYPOINT ["/bin/sh"]
+CMD ["-c", "/bin/bash /run.sh"]
